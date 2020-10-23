@@ -15,15 +15,20 @@ public class Starter {
         int num = (int) (sc.nextInt());
 
         if (num >= 0 && num <= 9) {
-            nikita.init(name, num);
-            if (nikita.num == target) {
-                System.out.println("You won! target val was = " + nikita.num);
+            nikita.setName(name);
+            nikita.setNum(num);
+            nikita.setNumOfAttempts();
+
+            if (nikita.getNum() == target) {
+                System.out.println("You won! target val was = " + nikita.getNum());
             } else {
-                while (nikita.num != target) {
-                    System.out.println("Not enough... " + nikita.num + " is wrong.");
-                    nikita.num = (int) (sc.nextInt());
+                while (nikita.getNum() != target) {
+                    System.out.println("Not enough... " + nikita.getNum() + " is wrong.");
+                    nikita.setNum((int) (sc.nextInt()));
+                    nikita.setNumOfAttempts();
                 }
-                System.out.println("You won! target val was = " + nikita.num);
+                System.out.println("You won! target val was = " + nikita.getNum());
+                System.out.println("Count of tries: " + nikita.getNumOfAttempts());
             }
         }
         else {

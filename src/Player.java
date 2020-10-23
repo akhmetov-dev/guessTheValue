@@ -1,9 +1,30 @@
 public class Player {
-    String name;
-    int num;
+    private String name;
+    private int num;
+    private int numOfAttempts;
 
-    void init (String name, int num) {
-        this.name = name;
-        this.num = num;
+    public void setName (String playerName) {
+        name = playerName;
     }
+
+    public String getName () {
+        return name;
+    }
+
+    public void setNum (int val) {
+        num = val;
+    }
+
+    public int getNum () {
+        return num;
+    }
+
+    public void setNumOfAttempts () {
+        numOfAttempts = numOfAttempts + 1;
+    }
+
+    public int getNumOfAttempts () {
+        return numOfAttempts;
+    }
+
 }
